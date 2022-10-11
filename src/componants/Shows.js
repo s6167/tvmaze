@@ -38,14 +38,14 @@ const Shows = () => {
             <br></br>
 
             <div className='container'>
-            {data.length==0 && <>{input!="" && <p style={{color:"red"}} >Result Not Found</p> }</>    }
+            {data.length===0 && <>{input!=="" && <p style={{color:"red"}} >Result Not Found</p> }</>    }
             {data.map((d)=>(
                 <div className='item' >
-                    <a href={d.show.url} target="_blank" >
-                        {d.show.image? <img src={d.show.image.medium} /> : <img src={poster} />}
+                    <a href={d.show.url} target="_blank" rel="noreferrer" >
+                        {d.show.image? <img src={d.show.image.medium} alt="" /> : <img src={poster} alt="" />}
                     </a>
                     <br />
-                    <a href={d.show.url}  target="_blank">
+                    <a href={d.show.url}  target="_blank" rel="noreferrer">
                         {d.show.name ? <h3>{d.show.name}</h3>:<h3>Name not Availlable</h3> }
                     </a>
                    

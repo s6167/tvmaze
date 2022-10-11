@@ -38,14 +38,14 @@ const Actor = () => {
             <br></br>
 
             <div className='container'>
-            {data.length==0 && <>{input!="" && <p style={{color:"red"}} >Result Not Found</p> }</>    }
+            {data.length===0 && <>{input!=="" && <p style={{color:"red"}} >Result Not Found</p> }</>    }
             {data.map((d)=>(
                 <div className='item' >
-                    <a href={d.person.url} target="_blank" >
-                        {d.person.image? <img src={d.person.image.medium} /> : <img src={poster} />}
+                    <a href={d.person.url} target="_blank"  rel="noreferrer">
+                        {d.person.image? <img src={d.person.image.medium} alt="" /> : <img src={poster} alt="" />}
                     </a>
                     <br />
-                    <a href={d.person.url}  target="_blank">
+                    <a href={d.person.url}  target="_blank" rel="noreferrer">
                         {d.person.name ? <h3>{d.person.name}</h3>:<h3>Name not Availlable</h3> }
                     </a>
                 
